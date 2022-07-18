@@ -1,0 +1,55 @@
+﻿@model AppointmentDoctor.Models.PatientResponse;
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width"/>
+        <title>RsvpForm</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/styles.css"/> 
+    </head>
+    <body>
+        <div class="panel panel-success">
+            <div class="panel-heading text-center"><h4>RSVP</h4></div>
+            <div class="panel-body">
+                <form class="p-a-1" asp-action="RsvpForm" method="post">
+                     <div asp-validation-summary="All"></div>
+                     <div class="form-group">
+                         <label asp-for="Name">Your name:</label>
+                         <input class="form-control" asp-for="Name"/>
+                     </div>
+                     <div class="form-group">
+                        <label asp-for="Email">Your email:</label>
+                        <input class="form-control" asp-for="Email"/>
+                     </div>
+                     <div class="form-group">
+                        <label asp-for="Phone">Your phone:</label>
+                        <input class="form-control" asp-for="Phone"/>
+                     </div>
+                     <div class="form-group">
+                        <label>Doctor type:</label>
+                        <select class="form-control" asp-for="DoctorType">
+                            <option value="">Choose here</option>
+                            <option value="Orthopedist">Orthopedist</option>
+                            <option value="Surgeon">Surgeon</option>
+                            <option value="Dentist">Dentist</option>
+                            <option value="Psychologist">Psychologist</option>
+                            <option value="Gynecologist">Gynecologist</option>
+                        </select>
+                     </div>
+                     <div class="form-group">
+                         <label asp-for="Date">Enter the date of admission</label>
+                         <input type="date" class="form-control" asp-for="Date">
+                     </div>
+                     <div class="text-center">
+                         <button class="btn btn-primary" type="submit">Submit RSVP</button>
+                     </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

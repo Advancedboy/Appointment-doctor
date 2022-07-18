@@ -1,0 +1,21 @@
+﻿@model AppointmentDoctor.Models.PatientResponse
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width"/>
+            <title>Thanks</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    </head>
+    <body class="text-center">
+        <p>
+            <h1>Thanks you, @Model.Name</h1>
+            <h2>We are waiting for you at the @Model.DoctorType's appointment @Model.Date.</h2>
+        </p>
+        Click <a class="nav-link" asp-action="ListResponses">here</a> to see a list of all our clients.
+    </body>
+</html>

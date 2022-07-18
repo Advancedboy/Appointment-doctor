@@ -1,0 +1,42 @@
+﻿@model IEnumerable<AppointmentDoctor.Models.PatientResponse>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width"/>
+            <title>List Responses</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    </head>
+    <body class="text-center">
+        <div class="panel-body">
+            <h2>These are all the people who have ever used the services of our clinic (do not ask why we publish their data)</h2>
+            <table class="table table-sm table-striped table-bordered">
+                <thread>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Doctor Type</th>
+                        <th>Date</th>
+                    </tr>
+                </thread>
+                <tbody>
+                    @foreach(AppointmentDoctor.Models.PatientResponse r in Model)
+                    {
+                        <tr>
+                            <td>@r.Name</td>
+                            <td>@r.Email</td>
+                            <td>@r.Phone</td>
+                            <td>@r.DoctorType</td>
+                            <td>@r.Date</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
